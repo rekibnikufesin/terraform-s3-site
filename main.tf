@@ -55,7 +55,7 @@ resource "cloudflare_record" "site_cname" {
   name    = var.site_domain
   type    = "CNAME"
   zone_id = data.cloudflare_zones.domain.zones[0].id
-  value = aws_s3_bucket_website_configuration.website_endpoint
+  value = aws_s3_bucket_website_configuration.site.website_endpoint
   ttl = 1
   proxied = true
 }
